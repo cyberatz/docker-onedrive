@@ -3,10 +3,12 @@ FROM golang:alpine
 RUN apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/community \
      -X http://dl-cdn.alpinelinux.org/alpine/edge/main \
     alpine-sdk gnupg xz curl-dev sqlite-dev binutils-gold \
-    autoconf automake ldc
+    autoconf automake ldc git
 RUN go get github.com/tianon/gosu
+#RUN go get github.com/abraunegg/onedrive
 COPY . /usr/src/onedrive
 RUN cd /usr/src/onedrive/ && \
+    go get github.com/abraunegg/onedrive && \
     autoreconf -fiv && \
     ./configure && \
     make clean && \

@@ -6,8 +6,8 @@ RUN apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/community \
     autoconf automake ldc git
 RUN go get github.com/tianon/gosu
 #git=2.26.2-r0 
-RUN mkdir /usr/src && cd /usr/src/ && git clone https://github.com/abraunegg/onedrive.git --single-branch -b v2.4.6 && \
-    cd onedrive && git init && git switch -c v2.4.6
+RUN mkdir /usr/src && cd /usr/src/ && git clone https://github.com/abraunegg/onedrive.git --single-branch -b v2.4.7 && \
+    cd onedrive && git init && git switch -c v2.4.7
 #RUN mkdir /usr/src && cd /usr/src/ && git clone https://github.com/abraunegg/onedrive.git  && \
 #    cd onedrive && git init 
 
